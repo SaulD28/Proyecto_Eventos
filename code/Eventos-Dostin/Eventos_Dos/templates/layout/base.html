@@ -3,28 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">   
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
     <title>Document</title>
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg bg-body-tertiary navbar bg-body-tertiary  ">
-  <div class="container-fluid container">
+      <nav class="navbar navbar-expand-lg bg-body-tertiary navbar bg-body-tertiary border">
+        <div class="container-fluid container ">
         <img class="position-absolute top-0 start-0" src="https://www.galileo.edu/wp-content/uploads/2023/01/Galileo-Sin-slogan-1-1024x359.png" alt="Logo de la galileo" width="180" height="50">
-    <a class="navbar-brand" href="#"></a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse justify-content-center" id="navbarNavAltMarkup">
-      <div class="navbar-nav">
-        <a class="nav-link active " aria-current="page" href="{% url 'home' %}">Home</a>
-        <a class="nav-link active" aria-current="page" href="{% url 'table' %}">Table</a>
-        <a class="nav-link" href="#">Pricing</a> 
-        <a class="nav-link disabled" aria-disabled="true">Disabled</a>
-      </div>
+          <a class="navbar-brand" href="#"></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-center" id="navbarNavAltMarkup">
+        <div class="navbar-nav">
+          <a class="nav-link active " aria-current="page" href="{% url 'home' %}">Home</a>
+          <a class="nav-link active" aria-current="page" href="{% url 'table' %}">Table</a>
+          <a class="nav-link" href="#">Pricing</a> 
+          <a class="nav-link disabled" aria-disabled="true">Disabled</a>
+        </div>
     </div>
   </div>
 </nav>
 
+
+<img src="https://eventos.galileo.edu/images/Campus2.jpg" class="img-fluid" alt="..." width="100%" height="50px">
     
     <div>
         {% block content %}
