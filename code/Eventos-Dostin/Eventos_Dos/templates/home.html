@@ -1,12 +1,51 @@
 {% extends 'layout/base.html'%}
 
         {% block content %}
-        <div class="row row-cols-1 row-cols-md-2 g-4 " width="40%" height="40%"> 
+
+        <div class="position-relative overflow-hidden" style="height: 675px;">
+                <img src="https://eventos.galileo.edu/images/Campus2.jpg" class="position-absolute top-0 start-0 w-100 h-100 object-fit-cover" alt="Fondo">
+
+                <div class="position-absolute top-0 start-0 w-100 h-100 bg-dark bg-opacity-50"></div>
+
+
+                <div class="position-relative z-1 d-flex justify-content-center align-items-center h-100 text-white"></div>
+        </div>
+
+                <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
+                        <div class="carousel-inner">
+                                <div class="carousel-item active">
+                                        <img src="..." class="d-block w-100" alt="...">
+                                </div>
+                                <div class="carousel-item">
+                                        <img src="..." class="d-block w-100" alt="...">
+                                </div>
+                                <div class="carousel-item">
+                                        <img src="..." class="d-block w-100" alt="...">
+                                </div>
+                        </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Next</span>
+                        </button>
+                </div>
+
+
+<br>
+	
+<br>
+<br>
+
+
+        <div class="row row-cols-1 row-cols-md-2 g-4  " width="40%" height="40%"> 
                 <div class="col ">
-                        <div class="card w-50">
+                        <div class="card w-50 shadow-lg p-3 mb-5 bg-body-tertiary rounded">
                         <img src="https://eventos.galileo.edu/obtenerArchivo/eyJpdiI6IjI2UkxQcC91Z3kwSnhjVXVXSnNxenc9PSIsInZhbHVlIjoiQmM0WmxycFRUMVRTNmpYb1F4ZzRDdz09IiwibWFjIjoiNjI5NGI3Y2MwMDFhMjFlZDQ3NzEwMDU5ZThkZmMwMDFiYmEzMjFmNDEwOTI0ZTQ1NzdmMjBkZjE4ODQzNjk3OSIsInRhZyI6IiJ9" class="card-img-top" alt="...">
                         <div class="card-body">
-                        <h5 class="card-title">Torneo de FC25</h5>
+                        <h5 class="card-title">Entrada Regular - AI Summit LATAM 2025</h5>
                         <p class="card-text bg-info-subtle text-primary rounded-2">
                         </p>
                         <p class="text-success bg-success-subtle rounded-2">Inicia: 15/10/2025</p>
@@ -22,16 +61,17 @@
         </div>
         
         <div class="col">
-                <div class="card w-50">
+                <div class="card w-50 shadow-lg p-3 mb-5 bg-body-tertiary rounded">
                 <img src="https://eventos.galileo.edu/obtenerArchivo/eyJpdiI6ImhqUGhYNXc5MGZUK0FOVjNmcXRFUnc9PSIsInZhbHVlIjoibGIyeW1YMDdjTFlGWllwUWVtWHVzUT09IiwibWFjIjoiNzI4MzAzZWMwMWE1YmIwOGM5MzEyM2EyZWM4ZGIwOWNmZTQ2YjlmNGU2NWFmZjFlZmUyYTRhZWZjODRmMTQxNiIsInRhZyI6IiJ9" class="card-img-top" alt="...">
                         <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
+                        <h5 class="card-title">Herramientas de Inteligencia Artificial Generativa para la Productividad</h5>
                         <p class="card-text text-success bg-success-subtle rounded-2">Inicia: 1/11/2025</p>
+                        <p class="card-text text-success bg-success-subtle rounded-2">Ultimo dia de Asignacion: 20/11/2025</p>
                         <button type="button" class="btn btn-primary">
                                 <i class="bi bi-cart-fill"></i>
                         </button>
-                        <button type="button" class="btn btn-success">
-                                <i class="bi bi-cash-coin me-2"></i>Dark
+                        <button type="button" class="btn btn-success sticky-xxl-bottom">
+                                <i class="bi bi-cash-coin me-2"></i>Q.1500.00
                         </button>
                         </div>
                 </div>
