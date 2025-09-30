@@ -1,7 +1,71 @@
+
 {% extends 'layout/base.html'%}
+
 
 {% block content %}
 
+<br>
+<br>
+<br>
+
+<table class="table caption-top table table-sm w-75 caption-top mx-auto table-light">
+  <caption>LISTADO DE EVENTOS</caption>
+  <thead>
+    <tr>
+      <th scope="col">id</th>
+      <th scope="col">Nombre</th>
+      <th scope="col">Inicio de Asignación</th>
+      <th scope="col">Fin de Asignación</th>
+      <th scope="col">Fecha Inicio</th>
+      <th scope="col">Precio</th>
+      <th scope="col">Editar</th>
+      <th scope="col">Eliminar</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">1</th>
+      <td>Mark</td>
+      <td>Otto</td>
+      <td>@mdo</td>
+      <td>Mark</td>
+      <td>Otto</td>
+      <td><button type="button" class="btn btn-primary"><i class="bi bi-pencil-fill"></i></button></td>   
+      <td><button type="button" class="btn btn-danger"><i class="bi bi-trash3-fill"></i></button></td>
+    </tr>
+
+  </tbody>
+</table>
+<br>
+<br>
+<br>
 
 
+
+
+
+
+        <script>
+                function eventosApp() {
+                        return{
+                                title: 'Eventos Disponibles',
+                                Eventos: [],
+                                cargando: false,
+
+                                async cargarEventos() {
+                                        this.cargando = true;
+                                        try {
+                                                const respuesta = await fetch('/api/eventos/');
+                                                if (!respuesta.ok) throw new Error ('Error al obtener los eventos');
+                                                this.eventos = await respuesta.json();
+                                                console.log(this.eventos);
+                                        }catch (error) {
+                                                console.log('Error en fetch:', error);
+                                        } finally {
+                                                this.cargando = false;
+                                        }
+                                },
+                        }
+                }
+        </script>
 {% endblock %}
