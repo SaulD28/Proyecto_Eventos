@@ -79,6 +79,31 @@
         </div>
 
 
+        <script>
+                function eventosApp() {
+                        return{
+                                title: 'Eventos Disponibles',
+                                Eventos: [],
+                                cargando: false,
+
+                                async cargarEventos() {
+                                        this.cargando = true;
+                                        try {
+                                                const respuesta = await fetch('/api/eventos/');
+                                                if (!respuesta.ok) throw new Error ('Error al obtener los eventos');
+                                                this.eventos = await respuesta.json();
+                                                console.log(this.eventos);
+                                        }catch (error) {
+                                                console.log('Error en fetch:', error);
+                                        } finally {
+                                                this.cargando = false;
+                                        }
+                                },
+                        }
+                }
+        </script>
+
+
 
         
         {% endblock %}
