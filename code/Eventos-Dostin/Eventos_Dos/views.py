@@ -14,5 +14,5 @@ def table(request):
     return render(request, 'table.html')
 
 def get_eventos(request):
-    eventos = evento.objects.all().values()
+    eventos = Evento.objects.all().values()
     return JsonResponse(list(eventos), safe=False)

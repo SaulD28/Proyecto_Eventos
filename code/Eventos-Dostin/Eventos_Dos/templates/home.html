@@ -3,15 +3,11 @@
         {% block content %}
 
         <div class="position-relative overflow-hidden" style="height: 675px;">
-    <!-- Imagen de fondo -->
                 <img src="https://eventos.galileo.edu/images/Campus2.jpg" class="position-absolute top-0 start-0 w-100 h-100 object-fit-cover" alt="Fondo">
 
-    <!-- Capa oscura encima de la imagen -->
                 <div class="position-absolute top-0 start-0 w-100 h-100 bg-dark bg-opacity-50"></div>
 
-    <!-- Contenedor del contenido superpuesto -->
                 <div class="position-relative z-1 d-flex justify-content-center align-items-center h-100 text-white">
-        <!-- Carousel superpuesto -->
                         <div id="carouselExampleAutoplaying" class="carousel slide w-75" data-bs-ride="carousel">
                                 <div class="carousel-inner">
                                         <div class="carousel-item active">
@@ -38,43 +34,41 @@
 
 
 
-<br>
-	
+<br>	
 <br>
 <br>
 
-
-<div class="row row-cols-1 row-cols-md-2 g-4 justify-content-center">
-    
-    <div class="col d-flex justify-content-center">
-        <div class="card shadow-lg p-3 mb-5 bg-body-tertiary  rounded-2" style="width: 30rem;">
-            <img src="https://eventos.galileo.edu/obtenerArchivo/eyJpdiI6IjI2UkxQcC91Z3kwSnhjVXVXSnNxenc9PSIsInZhbHVlIjoiQmM0WmxycFRUMVRTNmpYb1F4ZzRDdz09IiwibWFjIjoiNjI5NGI3Y2MwMDFhMjFlZDQ3NzEwMDU5ZThkZmMwMDFiYmEzMjFmNDEwOTI0ZTQ1NzdmMjBkZjE4ODQzNjk3OSIsInRhZyI6IiJ9" class="card-img-top" alt="...">
-            <div class="card-body">
-                <h5 class="card-title">Entrada Regular - AI Summit LATAM 2025</h5>
-                <p class="text-success bg-success-subtle rounded-2"><span>Inicia: 1/11/2025</span><span class="ms-5">Finaliza: 1/12/2025</span> </p>
-                <p class="text-success bg-success-subtle rounded-2 bg-danger-subtle text-danger">Último día de asignación: 31/10/2025</p>
-                <div class="d-flex justify-content-between">
-                    <button type="button" class="btn btn-primary">
-                        <i class="bi bi-cart-fill"></i>
-                    </button>
-                    <button type="button" class="btn btn-success">
-                        <i class="bi bi-cash-coin me-2"></i>Q.250.00 
-                    </button>
+<div x-data="eventosApp()" x-init="cargarEventos()">
+        <div class="row row-cols-1 row-cols-md-2 g-4 justify-content-center">
+        <template x-for="evento in eventos" :key="evento.id">      
+                <div class="col d-flex justify-content-center">
+                        <div class="card shadow-lg p-3 mb-5 bg-body-tertiary  rounded-2" style="width: 30rem;">
+                                <img src="https://eventos.galileo.edu/obtenerArchivo/eyJpdiI6IjI2UkxQcC91Z3kwSnhjVXVXSnNxenc9PSIsInZhbHVlIjoiQmM0WmxycFRUMVRTNmpYb1F4ZzRDdz09IiwibWFjIjoiNjI5NGI3Y2MwMDFhMjFlZDQ3NzEwMDU5ZThkZmMwMDFiYmEzMjFmNDEwOTI0ZTQ1NzdmMjBkZjE4ODQzNjk3OSIsInRhZyI6IiJ9" class="card-img-top" alt="...">
+                                        <div class="card-body">
+                                                <h5 class="card-title" x-text="evento.nombre"></h5>
+                                                <p class="text-success bg-success-subtle rounded-2">Inicia: <span x-text="evento.fecha_Inicio"></span> <span class="ms-5">Finaliza: <span x-text="evento.fecha_fin"></span></span></p>
+                                                <p class="text-success bg-success-subtle rounded-2 bg-danger-subtle text-danger">Último día de asignación: <span x-text="evento.fecha_fin_asig"></span></p>
+                                                <div class="d-flex justify-content-between">
+                                                        <button type="button" class="btn btn-primary">
+                                                                <i class="bi bi-cart-fill"></i>
+                                                        </button>
+                                                        <button type="button" class="btn btn-success">
+                                                                <i class="bi bi-cash-coin me-2"> Q.<span x-text="evento.precio"></span></i> 
+                                                        </button>
+                                                </div>
+                                        </div>
+                        </div>
                 </div>
-            </div>
+        </template>
         </div>
-    </div>
-
-
 </div>
-
 
 
         <script>
                 function eventosApp() {
                         return{
                                 title: 'Eventos Disponibles',
-                                Eventos: [],
+                                eventos: [],
                                 cargando: false,
 
                                 async cargarEventos() {

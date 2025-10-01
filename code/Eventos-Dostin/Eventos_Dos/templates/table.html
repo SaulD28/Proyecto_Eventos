@@ -8,34 +8,53 @@
 <br>
 <br>
 
-<table class="table caption-top table table-sm w-75 caption-top mx-auto table-light">
-  <caption>LISTADO DE EVENTOS</caption>
-  <thead>
-    <tr>
-      <th scope="col">id</th>
-      <th scope="col">Nombre</th>
-      <th scope="col">Inicio de Asignación</th>
-      <th scope="col">Fin de Asignación</th>
-      <th scope="col">Fecha Inicio</th>
-      <th scope="col">Precio</th>
-      <th scope="col">Editar</th>
-      <th scope="col">Eliminar</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th scope="row">1</th>
-      <td>Mark</td>
-      <td>Otto</td>
-      <td>@mdo</td>
-      <td>Mark</td>
-      <td>Otto</td>
-      <td><button type="button" class="btn btn-primary"><i class="bi bi-pencil-fill"></i></button></td>   
-      <td><button type="button" class="btn btn-danger"><i class="bi bi-trash3-fill"></i></button></td>
-    </tr>
+<div class="w-75 mx-auto mb-4" x-data="eventosApp()" x-init="cargarEventos()">
 
-  </tbody>
-</table>
+  <!-- INPUT GROUP -->
+  <div class="input-group mb-3 w-50 ms-auto">
+    <span class="input-group-text" id="inputGroup-sizing-default">BUSCAR EVENTO</span>
+    <input 
+      type="text" 
+      class="form-control" 
+      placeholder="Escribe un nombre..." 
+      aria-label="Buscar evento"
+      x-model="filtro"
+    >
+  </div>
+
+  <!-- TABLA -->
+  <table class="table caption-top table-sm table-light">
+    <caption>LISTADO DE EVENTOS</caption>
+    <thead class="table-dark">
+      <tr>
+        <th scope="col">id</th>
+        <th scope="col">Nombre</th>
+        <th scope="col">Inicio de Asignación</th>
+        <th scope="col">Fin de Asignación</th>
+        <th scope="col">Fecha Inicio</th>
+        <th scope="col">Precio</th>
+        <th scope="col">Editar</th>
+        <th scope="col">Eliminar</th>
+      </tr>
+    </thead>
+    <tbody>
+      <template x-for="evento in eventos" :key="evento.id">
+        <tr>
+          <th scope="row" x-text="evento.id"></th>
+          <td x-text="evento.nombre"></td>
+          <td x-text="evento.fecha_Asig"></td>
+          <td x-text="evento.fecha_fin_asig"></td>
+          <td x-text="evento.fecha_Inicio"></td>
+          <td x-text="evento.precio"></td>
+          <td><button type="button" class="btn btn-primary"><i class="bi bi-pencil-fill"></i></button></td>   
+          <td><button type="button" class="btn btn-danger"><i class="bi bi-trash3-fill"></i></button></td>
+        </tr>
+      </template>
+    </tbody>
+  </table>
+</div>
+
+
 <br>
 <br>
 <br>
